@@ -11,5 +11,6 @@ namespace Quizzer.Queries.Contracts
     public interface IQuestionService
     {
         QuestionByIdQueryResponseModel GetQuestionById(QuestionByIdQuery query);
+        public QuestionsByClassQueryResponseModel GetQuestionsByClass(QuestionsByClassQuery query);
     }
 }

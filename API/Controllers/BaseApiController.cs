@@ -1,4 +1,4 @@
-﻿using Domain.Models;
+﻿using Domain.Core;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Quizzer.Queries.Models;

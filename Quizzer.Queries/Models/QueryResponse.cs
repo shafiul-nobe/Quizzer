@@ -18,6 +18,7 @@ namespace Quizzer.Queries.Models
             ErrorMessage = null;
         }
         public static QueryResponse<TData> Success(TData data) => new QueryResponse<TData>{ IsSuccess = true, Data = data };
+        public static QueryResponse<TData> Success(TData data, int count) => new QueryResponse<TData> { IsSuccess = true, Data = data, TotalCount = count };
         public static QueryResponse<TData> Failure(string error) => new QueryResponse<TData>{ IsSuccess = false, ErrorMessage = error };
 
     }

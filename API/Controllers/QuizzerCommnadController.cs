@@ -7,7 +7,6 @@ using ResourceManagement.Contracts;
 using ResourceManagement.Models;
 using System.Threading.Tasks;
 using ResourceManagement.Commands;
-using Domain.Models;
 
 namespace API.Controllers
 {

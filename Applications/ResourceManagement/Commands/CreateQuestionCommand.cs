@@ -1,4 +1,4 @@
-﻿using Domain.Models;
+﻿using Domain.Core;
 using MediatR;
 using ResourceManagement.Models;
 using System;
@@ -15,5 +15,7 @@ namespace ResourceManagement.Commands
         public string Question { get; set; }
         public List<string> Options { get; set; }
         public string CorrectOption { get; set; }
+        public string ClassId { get; set; }
+        public string SubjectId { get; set; }
     }
 }

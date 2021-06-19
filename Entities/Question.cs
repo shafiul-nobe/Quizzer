@@ -8,5 +8,9 @@ namespace Entities
         public string QuestionDetail { get; set; }
         public List<string> Options { get; set; }
         public string CorrectOption { get; set; }
+        public string SubjectId { get; set; }
+        public string ChapterId { get; set; }
+        public string ClassId { get; set; }
+
     }
 }

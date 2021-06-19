@@ -18,10 +18,17 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> GetQuestionById([FromBody] QuestionByIdQuery getquestionByIdQuery)
+        public async Task<IActionResult> GetQuestionById([FromBody] QuestionByIdQuery questionByIdQuery)
         {
-            var question =  await _mediator.Send(getquestionByIdQuery);
+            var question = await _mediator.Send(questionByIdQuery);
             return HandleResult(question);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GetQuestionsByClass([FromBody] QuestionsByClassQuery questionByClassQuery)
+        {
+            var questions = await _mediator.Send(questionByClassQuery);
+            return HandleResult(questions);
         }
     }
 }

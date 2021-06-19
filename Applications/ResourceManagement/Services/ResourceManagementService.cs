@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Infrastructure.Contracts;
+using ResourceManagement.Builders;
 using ResourceManagement.Commands;
 using ResourceManagement.Contracts;
 using ResourceManagement.Models;
@@ -21,7 +22,7 @@ namespace ResourceManagement.Services
         }
         public void CreateQuestion(CreateQuestionCommand command)
         {
-            repository.Save<Question>(new Question() { QuestionDetail = command.Question, ItemId = command.ItemId, Options = command.Options, CorrectOption = command.CorrectOption });
+            repository.Save<Question>(Mapper.CreateQuestion(command));
             var response = new CreateQuestionCommandResponseModel();
             
         }
