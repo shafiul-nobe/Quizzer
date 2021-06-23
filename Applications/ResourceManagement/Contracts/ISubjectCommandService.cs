@@ -1,5 +1,4 @@
 ﻿using ResourceManagement.Commands;
-using ResourceManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace ResourceManagement.Contracts
 {
-    public interface IResourceManagementService
+    public interface ISubjectCommandService
     {
-       void CreateQuestion(CreateQuestionCommand command);
-            
+        void CreateSubject(CreateSubjectCommand command);
     }
 }

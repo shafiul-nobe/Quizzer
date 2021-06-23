@@ -2,7 +2,6 @@
 using MediatR;
 using ResourceManagement.Commands;
 using ResourceManagement.Contracts;
-using ResourceManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,15 +13,15 @@ namespace ResourceManagement.CommandHandlers
 {
     public class CreateQuestionCommandHandler : IRequestHandler<CreateQuestionCommand, CommandResponse<Unit>>
     {
-        private readonly IResourceManagementService resourceManagementService;
+        private readonly IQuestionCommandService questionService;
 
-        public CreateQuestionCommandHandler(IResourceManagementService resourceManagementService)
+        public CreateQuestionCommandHandler(IQuestionCommandService questionService)
         {
-            this.resourceManagementService = resourceManagementService;
+            this.questionService = questionService;
         }
         public async Task<CommandResponse<Unit>> Handle(CreateQuestionCommand command, CancellationToken cancellationToken)
         {
-            resourceManagementService.CreateQuestion(command);
+            questionService.CreateQuestion(command);
             return CommandResponse<Unit>.Success(Unit.Value);
         }
     }

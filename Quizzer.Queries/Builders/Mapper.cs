@@ -32,5 +32,6 @@ namespace Quizzer.Queries.Builders
             }
             return QuestionsByClassQueryResponseModel;
         }
+
     }
 }

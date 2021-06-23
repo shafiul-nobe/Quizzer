@@ -12,11 +12,11 @@ using System.Threading.Tasks;
 
 namespace Quizzer.Queries.Services
 {
-    public class QuestionService : IQuestionService
+    public class QuestionQueryService : IQuestionQueryService
     {
         private readonly IRepository repository;
 
-        public QuestionService(IRepository repository)
+        public QuestionQueryService(IRepository repository)
         {
             this.repository = repository;
         }

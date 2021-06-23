@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ResourceManagement.Models
+namespace Entities
 {
-    public class CreateQuestionCommandResponseModel
+    public class StudentClass : EntityBase
     {
-
+        public string ClassName { get; set; }
     }
 }

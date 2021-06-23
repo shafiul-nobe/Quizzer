@@ -10,15 +10,12 @@ namespace Quizzer.Queries.Models
     {
         public bool IsSuccess { get; set; }
         public TData Data { get; set; }
-        public int TotalCount { get; set; }
         public string ErrorMessage { get; set; }
         public QueryResponse()
         {
-            TotalCount = 0;
             ErrorMessage = null;
         }
         public static QueryResponse<TData> Success(TData data) => new QueryResponse<TData>{ IsSuccess = true, Data = data };
-        public static QueryResponse<TData> Success(TData data, int count) => new QueryResponse<TData> { IsSuccess = true, Data = data, TotalCount = count };
         public static QueryResponse<TData> Failure(string error) => new QueryResponse<TData>{ IsSuccess = false, ErrorMessage = error };
 
     }

@@ -3,7 +3,6 @@ using Infrastructure.Contracts;
 using ResourceManagement.Builders;
 using ResourceManagement.Commands;
 using ResourceManagement.Contracts;
-using ResourceManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,19 +11,17 @@ using System.Threading.Tasks;
 
 namespace ResourceManagement.Services
 {
-    public class ResourceManagementService : IResourceManagementService
+    public class ClassCommandService : IClassCommandService
     {
         private readonly IRepository repository;
 
-        public ResourceManagementService(IRepository repository)
+        public ClassCommandService(IRepository repository)
         {
             this.repository = repository;
         }
-        public void CreateQuestion(CreateQuestionCommand command)
+        public void CreatClass(CreateClassCommand command)
         {
-            repository.Save<Question>(Mapper.CreateQuestion(command));
-            var response = new CreateQuestionCommandResponseModel();
-            
+            repository.Save<StudentClass>(Mapper.CreateClass(command));
         }
     }
 }

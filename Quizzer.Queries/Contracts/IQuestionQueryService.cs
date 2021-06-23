@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Quizzer.Queries.Contracts
 {
-    public interface IQuestionService
+    public interface IQuestionQueryService
     {
         QuestionByIdQueryResponseModel GetQuestionById(QuestionByIdQuery query);
         public QuestionsByClassQueryResponseModel GetQuestionsByClass(QuestionsByClassQuery query);

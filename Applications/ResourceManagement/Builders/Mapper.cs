@@ -19,9 +19,48 @@ namespace ResourceManagement.Builders
                 Options = createQuestionCommand.Options,
                 CorrectOption = createQuestionCommand.CorrectOption,
                 ClassId = createQuestionCommand.ClassId,
-                SubjectId = createQuestionCommand.SubjectId
+                ClassName = createQuestionCommand.ClassName,
+                SubjectId = createQuestionCommand.SubjectId,
+                SubjectName = createQuestionCommand.SubjectName,
+                ChapterId = createQuestionCommand.ChapterId,
+                ChapterName = createQuestionCommand.ChapterName
             };
         }
+        public static StudentClass CreateClass(CreateClassCommand createClassCommand)
+        {
+            return new StudentClass()
+            {
+               ItemId = createClassCommand.ItemId,
+               ClassName = createClassCommand.ClassName
+            };
+        }
+
+        public static Subject CreateSubject(CreateSubjectCommand createSubjectCommand)
+        {
+            return new Subject()
+            {
+                ItemId = createSubjectCommand.ItemId,
+                ClassName = createSubjectCommand.ClassName,
+                ClassId = createSubjectCommand.ClassId,
+                SubjectName = createSubjectCommand.SubjectName,
+            };
+        }
+
+        public static Chapter CreateChapter(CreateChapterCommand createChapterCommand)
+        {
+            return new Chapter()
+            {
+                ItemId = createChapterCommand.ItemId,
+                ChapterName = createChapterCommand.ChapterName,
+                ClassName = createChapterCommand.ClassName,
+                ClassId = createChapterCommand.ClassId,
+                SubjectId = createChapterCommand.SubjectId,
+                SubjectName = createChapterCommand.SubjectName,
+                ChapterNumber = createChapterCommand.ChapterNumber
+            };
+        }
+
+
 
     }
 }

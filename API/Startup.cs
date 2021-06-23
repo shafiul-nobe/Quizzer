@@ -44,8 +44,11 @@ namespace API
             });
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSingleton<IRepository, Repository>();
-            services.AddSingleton<IQuestionService, QuestionService>();
-            services.AddSingleton<IResourceManagementService, ResourceManagementService>();
+            services.AddSingleton<IQuestionQueryService, QuestionQueryService>();
+            services.AddSingleton<IQuestionCommandService, QuestionCommandService>();
+            services.AddSingleton<IClassCommandService, ClassCommandService>();
+            services.AddSingleton<ISubjectCommandService, SubjectCommandService>();
+            services.AddSingleton<IChapterCommandService, ChapterCommandService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });

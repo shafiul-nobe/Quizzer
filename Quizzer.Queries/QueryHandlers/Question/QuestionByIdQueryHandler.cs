@@ -10,9 +10,9 @@ namespace Quizzer.Queries.QueryHandlers.Question
 {
     public class QuestionByIdQueryHandler : IRequestHandler<QuestionByIdQuery, QueryResponse<QuestionByIdQueryResponseModel>>
     {
-        private readonly IQuestionService questionService;
+        private readonly IQuestionQueryService questionService;
 
-        public QuestionByIdQueryHandler(IQuestionService questionService)
+        public QuestionByIdQueryHandler(IQuestionQueryService questionService)
         {
             this.questionService = questionService;
         }

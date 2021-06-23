@@ -14,9 +14,9 @@ namespace Quizzer.Queries.QueryHandlers.Question
 {
     public class QuestionsByClassQueryHandler : IRequestHandler<QuestionsByClassQuery, QueryResponse<QuestionsByClassQueryResponseModel>>
     {
-        private readonly IQuestionService questionService;
+        private readonly IQuestionQueryService questionService;
 
-        public QuestionsByClassQueryHandler(IQuestionService questionService)
+        public QuestionsByClassQueryHandler(IQuestionQueryService questionService)
         {
             this.questionService = questionService;
         }
@@ -24,10 +24,14 @@ namespace Quizzer.Queries.QueryHandlers.Question
         public async Task<QueryResponse<QuestionsByClassQueryResponseModel>> Handle(QuestionsByClassQuery query, CancellationToken cancellationToken)
         {
             var questions = questionService.GetQuestionsByClass(query);
+            questions.PageSize = query.PageSize;
+            questions.TotalCount = questions.Questions.Count();
+            questions.TotalPages = (int)Math.Ceiling(questions.TotalCount / (double)questions.PageSize);
+            questions.CurrentPage = query.PageNumber;
+            questions.Questions = questions.Questions.Skip((query.PageNumber - 1) * query.PageSize).Take(query.PageSize).ToList();
 
-            return QueryResponse<QuestionsByClassQueryResponseModel>.Success(questions,questions.Questions.Count());
+            return QueryResponse<QuestionsByClassQueryResponseModel>.Success(questions);
         }
 
-        
     }
 }

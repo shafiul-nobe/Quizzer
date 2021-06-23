@@ -4,7 +4,6 @@ using Infrastructure.Contracts;
 using MediatR;
 using Entities;
 using ResourceManagement.Contracts;
-using ResourceManagement.Models;
 using System.Threading.Tasks;
 using ResourceManagement.Commands;
 
@@ -13,21 +12,41 @@ namespace API.Controllers
     
     public class QuizzerCommnadController : BaseApiController
     {
-        private readonly IResourceManagementService resourceManagementService;
+        private readonly IQuestionCommandService resourceManagementService;
 
         public IMediator _mediator { get; }
-        public QuizzerCommnadController(IResourceManagementService resourceManagementService, IMediator mediator)
+        public QuizzerCommnadController(IQuestionCommandService resourceManagementService, IMediator mediator)
         {
             this.resourceManagementService = resourceManagementService;
             _mediator = mediator;
         }
 
 
-        [HttpPost]
+        [HttpPost("CreateQuestion")]
         public async Task<IActionResult> CreateQuestion([FromBody] CreateQuestionCommand createQuestionCommand)
         {
-
             var result = await _mediator.Send(createQuestionCommand);
+            return HandleResult(result);
+        }
+
+        [HttpPost("CreateClass")]
+        public async Task<IActionResult> CreateClass([FromBody] CreateClassCommand createClassCommand)
+        {
+        var result = await _mediator.Send(createClassCommand);
+            return HandleResult(result);
+        }
+
+        [HttpPost("CreateSubject")]
+        public async Task<IActionResult> CreateSubject([FromBody] CreateSubjectCommand createSubjectCommand)
+        {
+            var result = await _mediator.Send(createSubjectCommand);
+            return HandleResult(result);
+        }
+
+        [HttpPost("CreateChapter")]
+        public async Task<IActionResult> CreateChapter([FromBody] CreateChapterCommand createChapterCommand)
+        {
+            var result = await _mediator.Send(createChapterCommand);
             return HandleResult(result);
         }
     }

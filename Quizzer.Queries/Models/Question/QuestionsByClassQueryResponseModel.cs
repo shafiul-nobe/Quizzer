@@ -1,4 +1,6 @@
-﻿using Domain.DTOs;
+﻿using Application.Core;
+using Domain.Core;
+using Domain.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Quizzer.Queries.Models.Question
 {
-    public class QuestionsByClassQueryResponseModel
+    public class QuestionsByClassQueryResponseModel : PagedList
     {
         public List<QuestionDto> Questions { get; set; }
         public QuestionsByClassQueryResponseModel()
