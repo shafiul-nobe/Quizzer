@@ -45,6 +45,7 @@ namespace API
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSingleton<IRepository, Repository>();
             services.AddSingleton<IQuestionQueryService, QuestionQueryService>();
+            services.AddSingleton<ISubjectQueryService, SubjectQueryService>();
             services.AddSingleton<IQuestionCommandService, QuestionCommandService>();
             services.AddSingleton<IClassCommandService, ClassCommandService>();
             services.AddSingleton<ISubjectCommandService, SubjectCommandService>();

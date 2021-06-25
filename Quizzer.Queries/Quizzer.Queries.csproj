@@ -8,13 +8,10 @@
     <Folder Include="Dtos\" />
     <Folder Include="Models\Chapter\" />
     <Folder Include="Models\Class\" />
-    <Folder Include="Models\Subject\" />
     <Folder Include="Queries\Class\" />
     <Folder Include="Queries\Chapter\" />
-    <Folder Include="Queries\Subject\" />
     <Folder Include="QueryHandlers\Chapter\" />
     <Folder Include="QueryHandlers\Class\" />
-    <Folder Include="QueryHandlers\Subject\" />
   </ItemGroup>
 
   <ItemGroup>

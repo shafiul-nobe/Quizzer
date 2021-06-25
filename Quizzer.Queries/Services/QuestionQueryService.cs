@@ -28,11 +28,15 @@ namespace Quizzer.Queries.Services
             return question.QuestionByIdQueryResponseModel();
         }
 
+        public QuestionsByChapterQueryResponseModel GetQuestionsByChapter(QuestionsByChapterQuery query)
+        {
+            var questions = repository.GetItems<Question>(x => x.ChapterId == query.ChapterId).ToList();
+            return questions.QuestionsByChapterQueryResponseModel();
+        }
+
         public QuestionsByClassQueryResponseModel GetQuestionsByClass(QuestionsByClassQuery query)
         {
             var questions = repository.GetItems<Question>(x => x.ClassId == query.ClassId).ToList();
-            if (questions.Count() == 0)
-                return null;
             return questions.QuestionsByClassQueryResponseModel();
 
         }

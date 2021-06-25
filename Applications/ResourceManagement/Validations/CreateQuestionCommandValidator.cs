@@ -20,7 +20,7 @@ namespace ResourceManagement.Validations
             RuleFor(c => c.Question).NotEmpty();
             RuleFor(c => c.Options).Cascade(CascadeMode.Stop).Must(ValidateOptions).WithMessage("must contain four options");
             RuleFor(c => c.CorrectOption).NotEmpty();
-           /* RuleFor(c => c.ClassId).Cascade(CascadeMode.Stop).Must(ValidateClassId).WithMessage("ClassId doesn't exist");*/
+            RuleFor(c => c.ClassId).Cascade(CascadeMode.Stop).Must(ValidateClassId).WithMessage("ClassId doesn't exist");
         }
 
         private bool ValidateOptions(List<string> options)

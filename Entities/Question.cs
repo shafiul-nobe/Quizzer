@@ -15,7 +15,9 @@ namespace Entities
         public string ClassId { get; set; }
         public string ClassName { get; set; }
         public int Level { get; set; }
+        public int ImportantLevel { get; set; }
         public double Rating { get; set; }
+        public string Explanation { get; set; }
 
     }
 }

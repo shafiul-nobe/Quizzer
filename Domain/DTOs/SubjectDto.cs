@@ -5,17 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities
+namespace Domain.DTOs
 {
-    public class Subject : EntityBase
+    public class SubjectDto
     {
+        public string ItemId { get; set; }
         public string SubjectName { get; set; }
         public string ClassId { get; set; }
         public string ClassName { get; set; }
         public Double Rating { get; set; }
         public int SUbjectNumber { get; set; }
         public List<SubjectChapter> SubjectChapters { get; set; }
-        public Subject()
+        public SubjectDto()
         {
             this.SubjectChapters = new List<SubjectChapter>();
         }
