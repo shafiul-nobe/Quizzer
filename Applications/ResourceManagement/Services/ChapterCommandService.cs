@@ -22,7 +22,7 @@ namespace ResourceManagement.Services
         }
         public void CreateChapter(CreateChapterCommand command)
         {
-            repository.Save<Chapter>(Mapper.CreateChapter(command));
+            repository.Save<Chapter>(ResouceManagementMapper.CreateChapter(command));
             var subject = repository.GetItem<Subject>(x => x.ItemId == command.SubjectId);
             subject.SubjectChapters.Add(new SubjectChapter()
             {

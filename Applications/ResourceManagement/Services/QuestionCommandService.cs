@@ -21,7 +21,7 @@ namespace ResourceManagement.Services
         }
         public void CreateQuestion(CreateQuestionCommand command)
         {
-            repository.Save<Question>(Mapper.CreateQuestion(command));
+            repository.Save<Question>(ResouceManagementMapper.CreateQuestion(command));
         }
     }
 }

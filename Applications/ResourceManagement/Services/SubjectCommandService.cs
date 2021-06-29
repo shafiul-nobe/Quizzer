@@ -21,7 +21,7 @@ namespace ResourceManagement.Services
         }
         public void CreateSubject(CreateSubjectCommand command)
         {
-            repository.Save<Subject>(Mapper.CreateSubject(command));
+            repository.Save<Subject>(ResouceManagementMapper.CreateSubject(command));
         }
     }
 }

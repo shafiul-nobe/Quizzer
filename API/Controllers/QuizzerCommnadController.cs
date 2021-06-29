@@ -6,6 +6,7 @@ using Entities;
 using ResourceManagement.Contracts;
 using System.Threading.Tasks;
 using ResourceManagement.Commands;
+using ModelTest.Commands;
 
 namespace API.Controllers
 {
@@ -47,6 +48,20 @@ namespace API.Controllers
         public async Task<IActionResult> CreateChapter([FromBody] CreateChapterCommand createChapterCommand)
         {
             var result = await _mediator.Send(createChapterCommand);
+            return HandleResult(result);
+        }
+
+        [HttpPost("CreatePackage")]
+        public async Task<IActionResult> CreatePackage([FromBody] CreatePackageCommand createPackageCommand)
+        {
+            var result = await _mediator.Send(createPackageCommand);
+            return HandleResult(result);
+        }
+
+        [HttpPost("CreateModelTest")]
+        public async Task<IActionResult> CreateModelTest([FromBody] CreateModelTestCommand createModelTestCommand)
+        {
+            var result = await _mediator.Send(createModelTestCommand);
             return HandleResult(result);
         }
     }

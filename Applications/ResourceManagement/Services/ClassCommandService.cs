@@ -21,7 +21,7 @@ namespace ResourceManagement.Services
         }
         public void CreatClass(CreateClassCommand command)
         {
-            repository.Save<StudentClass>(Mapper.CreateClass(command));
+            repository.Save<StudentClass>(ResouceManagementMapper.CreateClass(command));
         }
     }
 }

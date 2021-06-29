@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ResourceManagement.Builders
 {
-    public static class Mapper
+    public static class ResouceManagementMapper
     {
         public static Question CreateQuestion( CreateQuestionCommand createQuestionCommand)
         {

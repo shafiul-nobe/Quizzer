@@ -22,6 +22,8 @@ using FluentValidation.AspNetCore;
 using ResourceManagement.Commands;
 using Quizzer.Queries.Queries.Question;
 using API.MiddleWares;
+using ModelTest.Contracts;
+using ModelTest.Services;
 
 namespace API
 {
@@ -50,6 +52,8 @@ namespace API
             services.AddSingleton<IClassCommandService, ClassCommandService>();
             services.AddSingleton<ISubjectCommandService, SubjectCommandService>();
             services.AddSingleton<IChapterCommandService, ChapterCommandService>();
+            services.AddSingleton<IPackageCommandService, PackageCommandService>();
+            services.AddSingleton<IModelTestCommandService, ModelTestCommandService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
